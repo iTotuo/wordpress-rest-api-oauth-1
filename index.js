@@ -81,6 +81,7 @@ var _class = function () {
 				});
 
 				_this2.config.credentials.token = {
+					public: data.oauth_token,
 					secret: data.oauth_token_secret
 				};
 
