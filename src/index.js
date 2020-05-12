@@ -52,6 +52,7 @@ export default class {
 			})}`
 
 			this.config.credentials.token = {
+				public: data.oauth_token,
 				secret: data.oauth_token_secret,
 			}
 
