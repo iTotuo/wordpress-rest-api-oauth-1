@@ -171,7 +171,7 @@ var _class = function () {
 	}, {
 		key: 'post',
 		value: function post(url, data) {
-			return this.request('POST', url, data);
+			return this.request('POST', url, data, header);
 		}
 	}, {
 		key: 'del',
@@ -182,6 +182,7 @@ var _class = function () {
 		key: 'request',
 		value: function request(method, url) {
 			var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+			var header = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
 			if (url.indexOf('http') !== 0) {
 				url = this.url + url;
@@ -227,6 +228,10 @@ var _class = function () {
 				Accept: 'application/json',
 				'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
 			};
+
+			if (header) {
+				headers = Object.assign(headers, header);
+			}
 
 			var requestUrls = [this.config.url + 'oauth1/request'];
 

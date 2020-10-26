@@ -138,14 +138,14 @@ export default class {
 	}
 
 	post( url, data ) {
-		return this.request( 'POST', url, data )
+		return this.request( 'POST', url, data, header )
 	}
 
 	del( url, data, callback ) {
 		return this.request( 'DELETE', url, data )
 	}
 
-	request( method, url, data = null ) {
+	request( method, url, data = null, header = null ) {
 		if ( url.indexOf( 'http' ) !== 0 ) {
 			url = this.url + url
 		}
@@ -188,6 +188,11 @@ export default class {
 			Accept: 'application/json',
 			'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
 		}
+
+		if(header){
+			headers = Object.assign(headers,header)
+		}
+		console.log(headers)
 
 		const requestUrls = [
 			`${this.config.url}oauth1/request`
