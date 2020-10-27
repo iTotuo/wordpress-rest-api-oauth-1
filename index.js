@@ -233,6 +233,8 @@ var _class = function () {
 				headers = Object.assign(headers, header);
 			}
 
+			console.log(header)
+
 			var requestUrls = [this.config.url + 'oauth1/request'];
 
 			/**
