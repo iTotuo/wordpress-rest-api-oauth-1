@@ -236,7 +236,6 @@ var _class = function () {
 			if (header) {
 				headers = Object.assign(headers, header);
 			}
-			console.log(headers);
 
 			var requestUrls = [this.config.url + 'oauth1/request'];
 
@@ -246,6 +245,8 @@ var _class = function () {
 			if (this.oauth && this.config.credentials.token || requestUrls.indexOf(url) > -1) {
 				headers = _extends({}, headers, this.oauth.toHeader(oauthData));
 			}
+
+			console.log(headers);
 
 			return fetch(url, {
 				method: method,

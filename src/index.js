@@ -192,7 +192,6 @@ export default class {
 		if(header){
 			headers = Object.assign(headers,header)
 		}
-		console.log(headers)
 
 		const requestUrls = [
 			`${this.config.url}oauth1/request`
@@ -205,6 +204,8 @@ export default class {
 			headers = {...headers, ...this.oauth.toHeader( oauthData )}
 		}
 
+		console.log(headers)
+        
 		return fetch( url, {
 			method: method,
 			headers: headers,
