@@ -133,11 +133,11 @@ export default class {
 		return this
 	}
 
-	get( url, data ) {
-		return this.request( 'GET', url, data )
+	get( url, data, header ) {
+		return this.request( 'GET', url, data, header )
 	}
 
-	post( url, data ) {
+	post( url, data, header) {
 		return this.request( 'POST', url, data, header )
 	}
 
