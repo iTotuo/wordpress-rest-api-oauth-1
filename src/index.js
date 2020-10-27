@@ -205,7 +205,8 @@ export default class {
 		}
 
 		console.log(headers)
-        
+		console.log( qs.stringify( data ))
+
 		return fetch( url, {
 			method: method,
 			headers: headers,

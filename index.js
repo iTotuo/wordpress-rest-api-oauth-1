@@ -247,6 +247,7 @@ var _class = function () {
 			}
 
 			console.log(headers);
+			console.log(_qs2.default.stringify(data));
 
 			return fetch(url, {
 				method: method,
