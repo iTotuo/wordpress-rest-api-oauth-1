@@ -166,11 +166,15 @@ var _class = function () {
 	}, {
 		key: 'get',
 		value: function get(url, data) {
-			return this.request('GET', url, data);
+			var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+			return this.request('GET', url, data, header);
 		}
 	}, {
 		key: 'post',
 		value: function post(url, data) {
+			var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
 			return this.request('POST', url, data, header);
 		}
 	}, {
@@ -232,8 +236,7 @@ var _class = function () {
 			if (header) {
 				headers = Object.assign(headers, header);
 			}
-
-			console.log(headers)
+			console.log(headers);
 
 			var requestUrls = [this.config.url + 'oauth1/request'];
 
