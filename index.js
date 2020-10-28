@@ -220,6 +220,7 @@ var _class = function () {
 				});
 			}
 
+			console.log({ oauthData: oauthData });
 			if (this.oauth) {
 				var oauthData = this.oauth.authorize({
 					method: method,
@@ -246,7 +247,7 @@ var _class = function () {
 				headers = _extends({}, headers, this.oauth.toHeader(oauthData));
 			}
 
-			console.log(headers);
+			console.log({ headers: headers, data: data, oauthData: oauthData });
 			console.log(_qs2.default.stringify(data));
 
 			return fetch(url, {

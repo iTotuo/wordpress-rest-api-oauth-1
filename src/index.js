@@ -176,6 +176,7 @@ export default class {
 			})
 		}
 
+		console.log({oauthData})
 		if ( this.oauth ) {
 			var oauthData = this.oauth.authorize( {
 				method: method,
@@ -204,7 +205,7 @@ export default class {
 			headers = {...headers, ...this.oauth.toHeader( oauthData )}
 		}
 
-		console.log(headers)
+		console.log({headers,data,oauthData})
 		console.log( qs.stringify( data ))
 
 		return fetch( url, {
