@@ -181,7 +181,8 @@ export default class {
 			var oauthData = this.oauth.authorize( {
 				method: method,
 				url: url,
-				data: oauthData
+				data: oauthData,
+				includeBodyHash:true
 			}, this.config.credentials.token ? this.config.credentials.token : null )
 		}
 
