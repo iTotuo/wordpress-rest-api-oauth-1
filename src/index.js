@@ -176,13 +176,16 @@ export default class {
 			})
 		}
 
+		if(header){
+			oauthData:null
+		}
+
 		console.log({oauthData})
 		if ( this.oauth ) {
 			var oauthData = this.oauth.authorize( {
 				method: method,
 				url: url,
 				data: oauthData,
-				includeBodyHash:true
 			}, this.config.credentials.token ? this.config.credentials.token : null )
 		}
 

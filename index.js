@@ -220,13 +220,16 @@ var _class = function () {
 				});
 			}
 
+			if (header) {
+				oauthData: null;
+			}
+
 			console.log({ oauthData: oauthData });
 			if (this.oauth) {
 				var oauthData = this.oauth.authorize({
 					method: method,
 					url: url,
-					data: oauthData,
-					includeBodyHash: true
+					data: oauthData
 				}, this.config.credentials.token ? this.config.credentials.token : null);
 			}
 
