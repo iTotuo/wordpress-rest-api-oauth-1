@@ -222,9 +222,9 @@ var _class = function () {
 
 			if (header) {
 				oauthData = '';
+				console.log({ oauthData: oauthData });
 			}
 
-			console.log({ oauthData: oauthData });
 			if (this.oauth) {
 				var oauthData = this.oauth.authorize({
 					method: method,
