@@ -176,9 +176,9 @@ export default class {
 			})
 		}
 
-		// if(header){
-		// 	oauthData:null
-		// }
+		if(header){
+			oauthData:''
+		}
 
 		console.log({oauthData})
 		if ( this.oauth ) {
