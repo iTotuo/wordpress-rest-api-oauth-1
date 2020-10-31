@@ -221,7 +221,7 @@ var _class = function () {
 			}
 
 			if (header) {
-				oauthData: '';
+				oauthData = '';
 			}
 
 			console.log({ oauthData: oauthData });
