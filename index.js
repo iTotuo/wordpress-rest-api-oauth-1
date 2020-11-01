@@ -220,10 +220,10 @@ var _class = function () {
 				});
 			}
 
-			if (header) {
-				oauthData = '';
-				console.log({ oauthData: oauthData });
-			}
+			// if(header){
+			// 	oauthData=''
+			// 	console.log({oauthData})
+			// }
 
 			if (this.oauth) {
 				var oauthData = this.oauth.authorize({

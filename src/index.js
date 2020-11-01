@@ -176,10 +176,10 @@ export default class {
 			})
 		}
 
-		if(header){
-			oauthData=''
-			console.log({oauthData})
-		}
+		// if(header){
+		// 	oauthData=''
+		// 	console.log({oauthData})
+		// }
 
 		if ( this.oauth ) {
 			var oauthData = this.oauth.authorize( {
