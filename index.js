@@ -189,6 +189,7 @@ var _class = function () {
 		value: function request(method, url) {
 			var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 			var header = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+			var body = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
 
 			if (url.indexOf('http') !== 0) {
 				url = this.url + url;

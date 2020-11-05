@@ -145,7 +145,7 @@ export default class {
 		return this.request( 'DELETE', url, data )
 	}
 
-	request( method, url, data = null, header = null ) {
+	request( method, url, data = null, header = null,body=null ) {
 		if ( url.indexOf( 'http' ) !== 0 ) {
 			url = this.url + url
 		}
