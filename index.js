@@ -167,15 +167,17 @@ var _class = function () {
 		key: 'get',
 		value: function get(url, data) {
 			var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+			var body = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
-			return this.request('GET', url, data, header);
+			return this.request('GET', url, data, header, body);
 		}
 	}, {
 		key: 'post',
 		value: function post(url, data) {
 			var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+			var body = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
-			return this.request('POST', url, data, header);
+			return this.request('POST', url, data, header, body);
 		}
 	}, {
 		key: 'del',
@@ -220,10 +222,10 @@ var _class = function () {
 				});
 			}
 
-			// if(header){
-			// 	oauthData=''
-			// 	console.log({oauthData})
-			// }
+			if (header && body) {
+				oauthData = body;
+				console.log({ oauthData: oauthData });
+			}
 
 			if (this.oauth) {
 				var oauthData = this.oauth.authorize({

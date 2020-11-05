@@ -133,12 +133,12 @@ export default class {
 		return this
 	}
 
-	get( url, data, header=null ) {
-		return this.request( 'GET', url, data, header )
+	get( url, data, header=null,body=null ) {
+		return this.request( 'GET', url, data, header,body )
 	}
 
-	post( url, data, header=null) {
-		return this.request( 'POST', url, data, header )
+	post( url, data, header=null, body=null) {
+		return this.request( 'POST', url, data, header, body )
 	}
 
 	del( url, data, callback ) {
@@ -176,10 +176,10 @@ export default class {
 			})
 		}
 
-		// if(header){
-		// 	oauthData=''
-		// 	console.log({oauthData})
-		// }
+		if(header && body){
+			oauthData=body
+			console.log({oauthData})
+		}
 
 		if ( this.oauth ) {
 			var oauthData = this.oauth.authorize( {
