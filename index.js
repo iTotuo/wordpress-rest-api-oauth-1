@@ -257,11 +257,15 @@ var _class = function () {
 			console.log({ headers: headers, data: data, oauthData: oauthData });
 			console.log(_qs2.default.stringify(data));
 
+			if (body === null) {
+				body = ['GET', 'HEAD'].indexOf(method) > -1 ? null : _qs2.default.stringify(data);
+			}
+
 			return fetch(url, {
 				method: method,
 				headers: headers,
 				mode: 'cors',
-				body: ['GET', 'HEAD'].indexOf(method) > -1 ? null : _qs2.default.stringify(data)
+				body: body
 			}).then(function (response) {
 				if (response.headers.get('Content-Type') && response.headers.get('Content-Type').indexOf('x-www-form-urlencoded') > -1) {
 					return response.text().then(function (text) {

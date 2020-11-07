@@ -212,11 +212,16 @@ export default class {
 		console.log({headers,data,oauthData})
 		console.log( qs.stringify( data ))
 
+		if(body === null) {
+			body = ['GET','HEAD'].indexOf( method ) > -1 ? null : qs.stringify( data )
+		}
+
+
 		return fetch( url, {
 			method: method,
 			headers: headers,
 			mode: 'cors',
-			body: ['GET','HEAD'].indexOf( method ) > -1 ? null : qs.stringify( data )
+			body: body
 		} )
 		.then( response => {
 			if ( response.headers.get( 'Content-Type' ) && response.headers.get( 'Content-Type' ).indexOf( 'x-www-form-urlencoded' ) > -1 ) {
