@@ -177,7 +177,7 @@ export default class {
 		}
 
 		if(header && body){
-			oauthData=body
+			oauthData={}
 			console.log({oauthData})
 		}
 

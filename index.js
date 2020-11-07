@@ -224,7 +224,7 @@ var _class = function () {
 			}
 
 			if (header && body) {
-				oauthData = body;
+				oauthData = {};
 				console.log({ oauthData: oauthData });
 			}
 
