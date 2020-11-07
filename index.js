@@ -254,12 +254,12 @@ var _class = function () {
 				headers = _extends({}, headers, this.oauth.toHeader(oauthData));
 			}
 
-			console.log({ headers: headers, data: data, oauthData: oauthData });
-			console.log(_qs2.default.stringify(data));
-
 			if (body === null) {
 				body = ['GET', 'HEAD'].indexOf(method) > -1 ? null : _qs2.default.stringify(data);
 			}
+
+			console.log({ headers: headers, data: data, oauthData: oauthData, body: body });
+			console.log(_qs2.default.stringify(data));
 
 			return fetch(url, {
 				method: method,

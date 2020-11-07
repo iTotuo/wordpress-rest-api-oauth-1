@@ -209,13 +209,13 @@ export default class {
 			headers = {...headers, ...this.oauth.toHeader( oauthData )}
 		}
 
-		console.log({headers,data,oauthData})
-		console.log( qs.stringify( data ))
 
 		if(body === null) {
 			body = ['GET','HEAD'].indexOf( method ) > -1 ? null : qs.stringify( data )
 		}
 
+		console.log({headers,data,oauthData,body})
+		console.log( qs.stringify( data ))
 
 		return fetch( url, {
 			method: method,
